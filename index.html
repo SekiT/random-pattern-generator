@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Random Pattern Generator</title>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1>Random Pattern Generator</h1>
+    <span id="colors">
+      <span class="color"><input class="color_picker" type="color" value="#F0F0FF"><button onclick="delete_color(this.parentNode)">x</button></span>
+      <span class="color"><input class="color_picker" type="color" value="#BBDDFF"><button onclick="delete_color(this.parentNode)">x</button></span>
+    </span>
+    <button onclick="add_color()">+</button><br>
+    <canvas id="canvas" width="900" height="600"></canvas>
+  </body>
+</html>
