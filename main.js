@@ -1,6 +1,6 @@
 var $ = function(s) { return document.getElementById(s) || document.getElementsByClassName(s) }
 
-var PatternSize = [40, 20],
+var PatternSize = [100, 100],
     Colors = [[240, 240, 255], [187, 221, 255]]
 
 var delete_color = function(color_span) {
@@ -23,7 +23,7 @@ var add_color = function(){
 var generate_pattern = function() {
   var w = PatternSize[0],
       h = PatternSize[1],
-      Cells  = new Array(h).fill(new Array(w)),
+      Cells  = [],
       hashes = {},
       hash   = ""
 
@@ -47,16 +47,19 @@ var setColors = function() {
       parseInt(color_string.substring(5, 7), 16)
     ]
   }
+  return Colors
 }
 
 var seed = function(Cells, w, h) {
   var len = Colors.length
 
   for(var i = 0, j; i < h; i++) {
+    Cells[i] = []
     for(j = 0; j < w; j++) {
       Cells[i][j] = Math.floor(Math.random()*len)
     }
   }
+  return Cells
 }
 
 var calc_hash = function(Cells, w, h) {
@@ -72,9 +75,10 @@ var calc_hash = function(Cells, w, h) {
 
 var alternate_generation = function(Cells, w, h) {
   var len = Colors.length
-  var NextCells = new Array(h).fill(new Array(w))
+  var NextCells = []
 
   for(var i = 0,j; i < h; i++) {
+    NextCells[i] = []
     for(j = 0; j < w; j++) {
       var votes = new Array(len).fill(0)
       for(var k = -1, l; k <= 1; k++) {
