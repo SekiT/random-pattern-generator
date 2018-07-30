@@ -1,8 +1,8 @@
-  width: 700px;
 .canvas {
   height: 400px;
-  outline: 2px solid gray;
   margin: 5px;
+  outline: 2px solid gray;
+  width: 700px;
 }
 .image_canvas {
   display: none
