@@ -1,9 +1,9 @@
-#canvas {
   width: 700px;
+.canvas {
   height: 400px;
   outline: 2px solid gray;
   margin: 5px;
 }
-#image_canvas {
+.image_canvas {
   display: none
 }
