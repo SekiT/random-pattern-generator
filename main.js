@@ -77,7 +77,7 @@ var alternate_generation = function(Cells, w, h) {
   var len = Colors.length
   var NextCells = []
 
-  for(var i = 0,j; i < h; i++) {
+  for(var i = 0, j; i < h; i++) {
     NextCells[i] = []
     for(j = 0; j < w; j++) {
       var votes = new Array(len).fill(0)
@@ -124,9 +124,9 @@ var fill_canvas = function(Cells, w, h) {
 
   var image_canvas = $("image_canvas"),
       image_context = image_canvas.getContext("2d")
-  image_canvas.width = w
+  image_canvas.width  = w
   image_canvas.height = h
-  image_context.putImageData(image, 0, 0);
+  image_context.putImageData(image, 0, 0)
 
   var pattern = context.createPattern(image_canvas, "")
   context.fillStyle = pattern
